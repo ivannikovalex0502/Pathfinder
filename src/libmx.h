@@ -28,23 +28,27 @@ typedef enum f_errors {
 typedef struct s_APP {
     int SIZE;
     char **city;
-    int **a;
-    int **dist;
+    int *A_M;
+    int *dist_M;
     //t_list *all_paths;
     int invalid_line_number;
     char *file_name;
+    char *file_to_str;
+    char **parsed_lines_array;
+
 } t_App;
 
 void mx_printchar(char c);
 void mx_print_strarr(char **arr, const char *delim);
 void mx_printint(int n);
 void mx_print_unicode(wchar_t c);
+void mx_city_malloc(t_App *app);
 void mx_printstr(const char *s);
 double mx_pow(double n, unsigned int pow);
 int mx_sqrt(int x);
 char *mx_nbr_to_hex(unsigned long nbr);
 unsigned long mx_hex_to_nbr(const char *hex);
-void mx_check_text_file(t_App *app, char *str);
+void mx_check_text_file(t_App *app,  char *str);
 char *mx_itoa(int number);
 void mx_foreach(int *arr, int size, void (*f)(int));
 int mx_binary_search(char **arr, int size, const char *s, int *count);
@@ -61,6 +65,7 @@ char *mx_strdup(const char *s1);
 char *mx_strndup(const char *s1, size_t n);
 char *mx_strcpy(char *dst, const char *src);
 char *mx_strncpy(char *dst, const char *src, int len);
+char *mx_read_text_file(int argc, char *argv[],t_App *app);
 int mx_atoi(char *s);
 _Bool mx_isspace(char c);
 _Bool mx_isdigit(int c);
