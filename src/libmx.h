@@ -22,21 +22,30 @@ typedef enum f_errors {
     FILE_IS_EMTY,
     INVALID_FIRS_LINE,
     INVALID_N_ISLAND,
-    LINE_ISNT_VALID,
+    LINE_ISNT_VALID
 } t_errors;
+
 
 typedef struct s_APP {
     int SIZE;
     char **city;
     int *A_M;
     int *dist_M;
-    //t_list *all_paths;
     int invalid_line_number;
     char *file_name;
     char *file_to_str;
     char **parsed_lines_array;
 
 } t_App;
+
+typedef struct {
+    int *path;
+    int size;
+    int max_size;
+} t_lists; 
+
+void mx_make_paths(t_App *app);
+void push_element_in_island(char *elem, t_App *app);
 
 void mx_printchar(char c);
 void mx_print_strarr(char **arr, const char *delim);
@@ -61,6 +70,7 @@ void mx_strdel(char **str);
 void mx_del_strarr(char ***arr);
 int mx_count_int(int num);
 int mx_get_char_index(const char *str, char c);
+int search_index_island(char *elem, t_App *app);
 char *mx_strdup(const char *s1);
 char *mx_strndup(const char *s1, size_t n);
 char *mx_strcpy(char *dst, const char *src);
