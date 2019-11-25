@@ -3,11 +3,12 @@
 static void init_dist_matrix(t_App *app);
 static void algoritm_Floyd(t_App *app);
 static void make_cost_matrix(t_App *app);
+void mx_restore_paths(t_App *app);
 
 void mx_make_paths(t_App *app)
 {
     make_cost_matrix(app);
-    mx_restore_all_paths(app);
+    mx_restore_paths(app);
 }
 
 static void make_cost_matrix(t_App *app)
