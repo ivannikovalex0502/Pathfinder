@@ -1,5 +1,5 @@
-#include "libmx.h"
-
+#include "header.h"
+//#include "libmx.h"
 //int mx_atoi(char *s) {   // TODO: do it
     // int res = 0;
     // if(!mx_isdigit(*s)) return -1;

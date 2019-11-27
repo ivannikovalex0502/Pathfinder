@@ -1,7 +1,7 @@
-#include "libmx.h"
+#include "header.h"
 
 static void restore_paths_from_to(t_App *app, int i, int j);
-static void init_lists(t_list  **res, t_App *app, int i, int j);
+static void init_list(t_lists  **res, t_App *app, int i, int j);
 
 void mx_restore_paths(t_App *app)
 {
@@ -16,7 +16,7 @@ void mx_restore_paths(t_App *app)
 
 static void restore_paths_from_to(t_App *app, int i, int j)
 {
-    t_list *res =  NULL;
+    t_lists *res =  NULL;
 
     init_list(&res,app,i,j);
   
@@ -26,9 +26,9 @@ static void restore_paths_from_to(t_App *app, int i, int j)
     free(res);
 }
 
-static void init_list(t_list  **res, t_App *app, int i, int j)
+static void init_list(t_lists  **res, t_App *app, int i, int j)
 {
-    *res = malloc(sizeof(t_list));
+    *res = malloc(sizeof(t_lists));
     if((*res) == NULL) exit(1);
     
     (*res)->max_size = app->SIZE;

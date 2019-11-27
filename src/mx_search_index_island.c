@@ -1,6 +1,6 @@
-#include "libmx.h"
+#include "header.h"
 
-int search_index_island(char *elem, t_App *app)
+int mx_search_index_island(char *elem, t_App *app)
 {
     for(int i = 0; i < app->SIZE; i++)
     {

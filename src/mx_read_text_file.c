@@ -1,8 +1,7 @@
-#include "libmx.h"
+#include "header.h"
 
 char *mx_read_text_file(int argc, char *argv[],t_App *app)
 {
-
      argc = 2;
      app->file_name = argv[1];
      int fd = open(argv[1],O_RDONLY);

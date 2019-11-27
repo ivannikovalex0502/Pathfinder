@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "header.h"
 
 void mx_printerr(t_errors errors, t_App *app)
 {

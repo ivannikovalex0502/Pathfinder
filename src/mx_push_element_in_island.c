@@ -1,6 +1,6 @@
-#include "libmx.h"
+#include "header.h"
 
-void push_element_in_island(char *elem, t_App *app)
+void mx_push_element_in_island(char *elem, t_App *app)
 {
     char **island = app->city;
     int i;
@@ -13,7 +13,6 @@ void push_element_in_island(char *elem, t_App *app)
         if(mx_strcmp(island[i], elem) == 0)
             return;
     }
-
     if(i < app->SIZE)
         island[i] = mx_strdup(elem);
 

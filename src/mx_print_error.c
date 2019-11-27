@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "header.h"
 
 void mx_print_error(const char *s)
 {

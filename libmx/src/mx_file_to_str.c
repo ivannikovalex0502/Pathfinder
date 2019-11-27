@@ -9,12 +9,11 @@ char *mx_file_to_str(const char *file)
      if(fd < 0){
         close(fd);
             return NULL;
-        //mx_printerr(FILE_DOES_EX,file);
      }
 
      if(read(fd, buf, 1) < 0)
         return NULL;
-        //mx_printerr(FILE_IS_EMTY,file);
+
      while(read(fd,buf,1))
         len++;
      close(fd);

@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "header.h"
 
 static void init_matrix_A(t_App *app);
 

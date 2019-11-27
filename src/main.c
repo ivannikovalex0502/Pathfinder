@@ -1,5 +1,5 @@
-#include "libmx.h"
-
+#include "header.h"
+//#include "libmx.h"
 int main(int argc, char *argv[])
 {
     t_App *app = malloc(sizeof(t_App));
@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
 
     mx_make_paths(app);
 
-    //system("leaks -q ");
+    mx_free_all(app); 
+    system("leaks -q ");
 
     return 0;
 }

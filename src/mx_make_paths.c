@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "header.h"
 
 static void init_dist_matrix(t_App *app);
 static void algoritm_Floyd(t_App *app);
@@ -28,6 +28,8 @@ static void init_dist_matrix(t_App *app)
             app->dist_M[i * app->SIZE + j] = app->A_M[i * app->SIZE + j];
         }
     }
+    //printf("%s\n", app->dist_M[2 * app->SIZE + 2]);
+    //printf("%s\n", app->dist_M[2 * app->SIZE + 3]);
 }
 
 static void algoritm_Floyd(t_App *app)
@@ -46,4 +48,5 @@ static void algoritm_Floyd(t_App *app)
         }
     }
 }
+
 

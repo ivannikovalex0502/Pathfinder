@@ -1,4 +1,5 @@
-#include "libmx.h"
+#include "header.h"
+//#include "libmx.h"
 
 static _Bool parse_line(char *line, char **word1, char **word2, int  *word3);
 static _Bool is_valid_word(char *s);
@@ -22,26 +23,23 @@ void mx_check_text_file(t_App *app,  char *str)
 
 static void initialize(t_App *app, char **lines_file)
 {
-    for(int i = 1; lines_file[i] != NULL; i++)
-    {
+    for(int i = 1; lines_file[i] != NULL; i++){
         char *word1 = NULL;
         char *word2 = NULL;
         int word3 = -1;
 
-        if(parse_line(lines_file[i],&word1,&word2,&word3))
-        {
-            // TODO   занесити word1 and word2 в масив !!!!!
-            push_element_in_island(word1,app);
-            push_element_in_island(word2,app);
-            // TODO заполнить matrix_a
-            int i = search_index_island(word1,app);
-            int j = search_index_island(word2,app);
+        if(parse_line(lines_file[i],&word1,&word2,&word3)){
+            // занесли word1 and word2 в масив !!!!!
+            mx_push_element_in_island(word1,app);
+            mx_push_element_in_island(word2,app);
+            // заполнили matrix_a
+            int i = mx_search_index_island(word1,app);
+            int j = mx_search_index_island(word2,app);
 
             app->A_M[i * app->SIZE + j] = word3;
-            app->A_M[j * app->SIZE + i] = word3; // разобраться !!!!!!!!!!!!
+            app->A_M[j * app->SIZE + i] = word3; 
         }
-        else
-        {
+        else{
             free(word1);
             free(word2);
             app->invalid_line_number = i + 1; 
@@ -50,19 +48,6 @@ static void initialize(t_App *app, char **lines_file)
         free(word1);
         free(word2);
     }
-
-         //printf("%d\n", app->A_M[0 * app->SIZE + 1]);
-        //  printf("1 - %d\n",app->A_M[1]);
-        //  printf("2 - %d\n",  app->A_M[1 * app->SIZE + 0]);
-                    ////////////////
-        //   printf("%d\n",app->A_M[2]);
-        //   printf("%d\n",app->A_M[0 * app->SIZE + 2]);
-        //             ////////////////
-        //   printf("%d\n", app->A_M[1 * app->SIZE + 2]);
-        //   printf("%d\n",app->A_M[6]);
-                    ////////////////
-        // printf("%d\n", app->A_M[2 * app->SIZE + 3]);
-        // printf("%d\n",app->A_M[11]);
 }
 
 static _Bool parse_line(char *line, char **word1, char **word2, int  *word3)
