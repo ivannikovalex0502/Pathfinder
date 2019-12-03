@@ -10,7 +10,6 @@ char *mx_file_to_str(const char *file)
         close(fd);
             return NULL;
      }
-
      if(read(fd, buf, 1) < 0)
         return NULL;
 
@@ -18,14 +17,13 @@ char *mx_file_to_str(const char *file)
         len++;
      close(fd);
      if(fd < 0) return NULL;
-    
+
     char *result = mx_strnew(len);
     int fd2 = open(file, O_RDONLY);
     if(fd < 0) return NULL;
-
+    
     for(int i = 0; read(fd2,buf,1); i++)
         result[i] = *buf;
-
     close(fd2);
     if(fd < 0) return NULL;
 
