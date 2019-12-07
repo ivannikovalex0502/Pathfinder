@@ -12,6 +12,6 @@ void mx_free_all(t_App *app) {
 
 static void  delete_M(int *m) {
     if (m != NULL)
-        free(m); 
+        free(m);
 }
 

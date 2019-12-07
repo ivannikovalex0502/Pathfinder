@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     str = mx_read_text_file(argv, app);
     mx_check_text_file(app, str);
     mx_make_paths(app);
-    mx_free_all(app); 
+    mx_free_all(app);
     return 0;
 }
 

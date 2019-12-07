@@ -5,8 +5,7 @@ static void file_is_emty(t_App *app);
 static void file_not_exit(t_App *app);
 static void line_error_slash(t_App *app);
 
-void mx_printerr(t_errors errors, t_App *app)
-{
+void mx_printerr(t_errors errors, t_App *app) {
     if (errors == INVALID_ARGV)
         mx_print_error("usage: ./pathfinder [filename]");
     else if (errors == FILE_DOES_EX)
@@ -58,4 +57,3 @@ static void line_error_slash(t_App *app) {
     number_line = NULL;
     mx_print_error(" is not valid");
 }
-

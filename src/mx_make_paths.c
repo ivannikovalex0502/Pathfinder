@@ -27,14 +27,16 @@ static void init_dist_matrix(t_App *app) {
 static void algoritm_Floyd(t_App *app) {
     int size = app->SIZE;
     int *dist = app->dist_M;
+    int ik = 0;
+    int kj = 0;
+    int ij = 0;
 
     for (int k = 0; k < size; k++) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                int ik = i * size + k;
-                int kj = k * size + j;
-                int ij = i * size + j;
-
+                ik = i * size + k;
+                kj = k * size + j;
+                ij = i * size + j;
                 if (dist[ik] + dist[kj] < dist[ij])
                     dist[ij] = dist[ik] + dist[kj];
             }

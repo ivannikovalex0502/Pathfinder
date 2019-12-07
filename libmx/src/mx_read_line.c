@@ -1,17 +1,16 @@
 #include "libmx.h"
 
-int mx_read_line(char **lineptr, int buf_size, char delim, const int fd)
-{
+int mx_read_line(char **lineptr, int buf_size, char delim, const int fd) {
     static char *remainder = NULL;
     char buf[buf_size + 1];
     int read_bytes = 0;
     int delim_index = -1;
     char *tmp_str = NULL;
     char *tmp = NULL;
+    
     if (remainder) {
         tmp_str = mx_strdup(remainder);
     }
-
     while ((read_bytes = read(fd, buf, buf_size)) >= 0) {
         buf[read_bytes] = '\0';
         tmp = mx_strjoin(tmp_str, buf);

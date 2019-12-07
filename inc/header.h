@@ -1,7 +1,6 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-
 #include "libmx.h"
 
 typedef enum f_errors {
@@ -13,7 +12,6 @@ typedef enum f_errors {
     LINE_ISNT_VALID,
     LINE_ERROR_SLASH
 } t_errors;
-
 
 typedef struct s_APP {
     int SIZE;
@@ -35,7 +33,7 @@ typedef struct {
 } t_stack; 
 
 void mx_make_paths(t_App *app);
-void mx_guide_index(int i, int j, char *word1, char *word2);
+void mx_guide_index(t_App *app, char *word1, char *word2, int *word3);
 void mx_guide(char *word1, char *word2, t_App *app);
 void mx_print_line(void);
 void mx_push_element_in_island(char *elem, t_App *app);

@@ -34,16 +34,16 @@ static void check_emty_line(char *str, t_App *app) {
             j++;
         if (str[i] == '\n' && str[i + 1] == '\n') {
             app->k  = j + 1;
-            break; 
+            break;
         }
     }
 }
 
 static void all_null(t_App *app) {
-    app->city = NULL;    
-    app->A_M = NULL;            
-    app->dist_M = NULL;     
-    app->parsed_lines_array = NULL;      
+    app->city = NULL;
+    app->A_M = NULL;
+    app->dist_M = NULL;
+    app->parsed_lines_array = NULL;
     app->file_to_str = NULL;
 }
 

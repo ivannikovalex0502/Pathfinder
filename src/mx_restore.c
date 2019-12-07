@@ -17,22 +17,21 @@ void mx_restore(t_App *app, t_stack *res) {
                 mx_restore(app, res);
                 pop_front_stack(res);
             }
-        }   
+        }
     }
 }
 
 static _Bool is_short_path(t_App *app, t_stack *res, int next) {
     int k;
     int i = res->path[0];
-    int *matrix_A = app->A_M;
-    int *matrix_D = app->dist_M;
+    int *m_A = app->A_M;
+    int *m_D = app->dist_M;
     int size = app->SIZE;
 
     k = get_from_stack(res);
     if (k != next) {
-        if (matrix_D[i * size + k] -  matrix_A[k * size + next] == matrix_D[i * size + next]) {
+        if (m_D[i * size + k] - m_A[k * size + next] == m_D[i * size + next])
             return true;
-        }
     }
     return false;
 }

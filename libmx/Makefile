@@ -61,7 +61,7 @@ CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
 
 all: install clean 
 install:
-	@mkdir obj
+	@mkdir -p obj
 	@cp $(SRCS) ./obj
 	@cp $(INC) ./obj
 	@clang $(CFLAGS) -c $(OBJC) -I $(OBJH)

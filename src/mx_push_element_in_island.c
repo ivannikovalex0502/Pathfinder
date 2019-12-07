@@ -13,6 +13,6 @@ void mx_push_element_in_island(char *elem, t_App *app) {
     if (i < app->SIZE)
         island[i] = mx_strdup(elem);
     else
-        mx_printerr(INVALID_N_ISLAND, app);    
+        mx_printerr(INVALID_N_ISLAND, app);
 }
 

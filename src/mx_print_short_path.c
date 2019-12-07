@@ -13,7 +13,6 @@ void mx_print_short_path(t_App *app, t_stack *res) {
     print_distance(app, res);
     mx_print_line();
     mx_printstr("\n");
-
 }
 
 static char *get_name_by_id(int i, t_App *app) {
